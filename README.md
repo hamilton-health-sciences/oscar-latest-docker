@@ -1,5 +1,5 @@
 # Dockerized OSCAR EMR
-OSCAR EMR is an open-source Electronic Medical Record (EMR) for the Canadian family physicians. This is a script to deploy master branch from OSCAR repository on a docker container. This pulls a fork of OSCAR at [https://github.com/E-Health/oscar.](https://github.com/E-Health/oscar) The official repository is [here.](https://bitbucket.org/oscaremr/oscar.git)
+OSCAR EMR is an open-source Electronic Medical Record (EMR) for the Canadian family physicians. This is a script to deploy master branch from OSCAR repository on a docker container. This pulls a fork of OSCAR at [https://github.com:mo3dev/oscar.](https://github.com:mo3dev/oscar) The official repository is [here.](https://bitbucket.org/oscaremr/oscar.git)
 
 This is an experimental application and is not for production use.
 
@@ -18,13 +18,13 @@ This is an experimental application and is not for production use.
 
 ## How to Use this
 * Just clone this repo and ./install.sh
-* Access oscar at http://localhost:8091/oscar_mcmaster/
+* Access oscar at http://localhost:8091/oscar/
 
 ## Using external database
 * Change the setting in docker-compose.yml
 
 ## What the script does
-* Checks out master branch from OSCAR repo.
+* Checks out docker-master branch from OSCAR repo.
 * Compile with maven.
 * Create Docker containers.
 * Deploy the database and application in the containers.
