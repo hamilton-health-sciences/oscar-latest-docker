@@ -39,6 +39,9 @@ services:
       db_name: "oscar_mcmaster?autoReconnect=true&zeroDateTimeBehavior=round&useOldAliasMetadataBehavior=true&jdbcCompliantTruncation=false"
     depends_on:
       - db
+    command: bash
+    stdin_open: true
+    tty: true
     networks:
       - mt-network
 

@@ -21,7 +21,7 @@ docker-compose up -d tomcat_oscar
 # echo "Restarting .."
 # sleep 60
 
-echo "OSCAR is set up at http://localhost:8091/oscar_mcmaster"
+echo "OSCAR is set up at http://localhost:8091/oscar"
 echo "You may have to restart the container http://localhost:8091/  (oscar/oscar)"
 echo "Errors if any are more likely to be in the database import!"
 echo "Thank You.."

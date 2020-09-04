@@ -10,9 +10,9 @@ RUN /home/build.sh
 FROM tomcat:7-jre8 as ship
 #FROM tomcat:7.0.96-jdk8-openjdk-slim as ship
 
-COPY --from=builder /home/oscar/target/oscar-14.0.0-SNAPSHOT.war /usr/local/tomcat/webapps/oscar_mcmaster.war
+COPY --from=builder /home/oscar/target/oscar-14.0.0-SNAPSHOT.war /usr/local/tomcat/webapps/oscar.war
 ADD conf /usr/local/tomcat/conf
-COPY conf/oscar_mcmaster.properties /root/oscar_mcmaster.properties
+COPY conf/oscar_mcmaster.properties /root/oscar.properties
 
 ENV JDBC_URL="jdbc:mysql://db:3306/oscar_mcmaster?autoReconnect=true&zeroDateTimeBehavior=round&useOldAliasMetadataBehavior=true&jdbcCompliantTruncation=false"
 ENV JDBC_USER="root"
