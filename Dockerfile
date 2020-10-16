@@ -27,4 +27,4 @@ ENV db_name="oscar_mcmaster?autoReconnect=true&zeroDateTimeBehavior=round&useOld
 
 EXPOSE 8080
 
-CMD ["/usr/local/tomcat/bin/startup.sh"]
+CMD ["catalina.sh", "start"]
