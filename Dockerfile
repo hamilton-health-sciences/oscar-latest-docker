@@ -10,8 +10,8 @@ RUN /home/build.sh
 FROM tomcat:7-jre8 as ship
 #FROM tomcat:7.0.96-jdk8-openjdk-slim as ship
 
-RUN wget http://jenkins.oscar-emr.com:8080/job/drugref2/18/org.drugref\$drugref2/artifact/org.drugref/drugref2/1.0-SNAPSHOT/drugref2-1.0-SNAPSHOT.war -O /usr/local/tomcat/webapps/drugref2.war
 COPY --from=builder /home/oscar/target/oscar-14.0.0-SNAPSHOT.war /usr/local/tomcat/webapps/oscar.war
+RUN wget --secure-protocol=SSLv3 --no-check-certificate https://demo.oscarmcmaster.org:11042/job/drugref2Master/lastSuccessfulBuild/artifact/target/drugref2.war -O /usr/local/tomcat/webapps/drugref2.war
 
 ADD conf /usr/local/tomcat/conf
 COPY conf/oscar_mcmaster.properties /root/oscar.properties
@@ -27,4 +27,4 @@ ENV db_name="oscar_mcmaster?autoReconnect=true&zeroDateTimeBehavior=round&useOld
 
 EXPOSE 8080
 
-CMD ["catalina.sh", "run"]
+CMD ["/usr/local/tomcat/bin/startup.sh"]
