@@ -27,4 +27,4 @@ ENV db_name="oscar_mcmaster?autoReconnect=true&zeroDateTimeBehavior=round&useOld
 
 EXPOSE 8080
 
-CMD ["catalina.sh", "start"]
+CMD ["catalina.sh", "run"]
