@@ -19,7 +19,7 @@ services:
       - ./conf/my.cnf:/etc/mysql/my.cnf
       - .:/code
     networks:
-      - mt-network
+      - oscar-network
 
 
   # Tomcat container
@@ -41,8 +41,8 @@ services:
       - db
     tty: true
     networks:
-      - mt-network
+      - oscar-network
 
 networks:
-  mt-network:
+  oscar-network:
     driver: bridge

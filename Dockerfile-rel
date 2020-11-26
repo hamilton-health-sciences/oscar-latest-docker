@@ -3,7 +3,6 @@ FROM tomcat:7-jre8 as ship
 
 # COPY --from=builder /home/oscar/target/oscar-14.0.0-SNAPSHOT.war /usr/local/tomcat/webapps/oscar.war
 RUN wget http://jenkins.oscar-emr.com:8080/job/oscar-master/lastSuccessfulBuild/artifact/target/oscar-14.0.0-SNAPSHOT.war -O /usr/local/tomcat/webapps/oscar.war
-RUN wget http://jenkins.oscar-emr.com:8080/job/drugref2/18/org.drugref\$drugref2/artifact/org.drugref/drugref2/1.0-SNAPSHOT/drugref2-1.0-SNAPSHOT.war -O /usr/local/tomcat/webapps/drugref2.war
 
 ADD conf /usr/local/tomcat/conf
 COPY conf/oscar_mcmaster.properties /root/oscar.properties
